@@ -1,5 +1,5 @@
 #! /bin/bash
-
+# make sure this file and your environment.yml are in the home folder, ~, please
 JUPYTER_PORT=8888
 JUPYER_PASSWORD=mypassword
 
@@ -31,10 +31,10 @@ echo "c.NotebookApp.keyfile = u'$HOME/.cert/mykey.key'" >> ~/.jupyter/jupyter_no
 echo "c.NotebookApp.token = '$JUPYTER_PASSWORD'" >> ~/.jupyter/jupyter_notebook_config.py
 sudo ufw allow $JUPYTER_PORT/tcp
 
-conda env create -f environment.yml -y
-
 cd ..
 rm -r downloads
+conda env create -f environment.yml
+
 jupyter notebook
 
 
