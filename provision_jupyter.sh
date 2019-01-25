@@ -33,6 +33,7 @@ sudo ufw allow $JUPYTER_PORT/tcp
 
 cd ..
 rm -r downloads
+conda install -y nb_conda
 conda env create -f environment.yml
 
 jupyter notebook
