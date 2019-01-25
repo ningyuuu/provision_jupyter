@@ -31,7 +31,9 @@ echo "c.NotebookApp.keyfile = u'$HOME/.cert/mykey.key'" >> ~/.jupyter/jupyter_no
 echo "c.NotebookApp.token = '$JUPYTER_PASSWORD'" >> ~/.jupyter/jupyter_notebook_config.py
 sudo ufw allow $JUPYTER_PORT/tcp
 
-cd
+conda env create -f environment.yml -y
+
+cd ..
 rm -r downloads
 jupyter notebook
 
